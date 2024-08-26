@@ -1,0 +1,23 @@
+<!-- views/website_templates.xml -->
+<odoo>
+	<template id="website.highlight_banner" name="Website Highlight Banner">
+		<div class="highlight-banner">
+			<marquee behavior="scroll" direction="left" scrollamount="6">
+				<t t-foreach="request.env['website.highlight'].search([('active', '=', True)])" t-as="highlight">
+					<span>
+						<t t-esc="highlight.message" />
+					</span>
+					<t t-if="not loop.last">
+						|
+					</t>
+				</t>
+			</marquee>
+		</div>
+	</template>
+	<!-- Example of integration into a custom page -->
+	<template id="your_custom_page_template" inherit_id="website.layout">
+		<xpath expr="//div[@id='wrap']" position="before">
+			<t t-call="website_highlights.website.highlight_banner" />
+		</xpath>
+	</template>
+</odoo>

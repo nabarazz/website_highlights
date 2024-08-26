@@ -1,0 +1,50 @@
+<!-- views/website_highlight_views.xml -->
+<odoo>
+	<record id="view_website_highlight_form" model="ir.ui.view">
+		<field name="name">
+			website.highlight.form
+		</field>
+		<field name="model">
+			website.highlight
+		</field>
+		<field name="arch" type="xml">
+			<form string="Website Highlight">
+				<sheet>
+					<group>
+						<field name="name" />
+						<field name="message" />
+						<field name="active" />
+					</group>
+				</sheet>
+			</form>
+		</field>
+	</record>
+	<record id="view_website_highlight_tree" model="ir.ui.view">
+		<field name="name">
+			website.highlight.tree
+		</field>
+		<field name="model">
+			website.highlight
+		</field>
+		<field name="arch" type="xml">
+			<tree string="Website Highlights">
+				<field name="name" />
+				<field name="message" />
+				<field name="active" />
+			</tree>
+		</field>
+	</record>
+	<menuitem id="menu_website_highlight" name="Website Highlights" parent="website.menu_website_configuration" sequence="10" action="action_website_highlight" />
+	<record id="action_website_highlight" model="ir.actions.act_window">
+		<field name="name">
+			Website Highlights
+		</field>
+		<field name="res_model">
+			website.highlight
+		</field>
+		<field name="view_mode">
+			tree,form
+		</field>
+		<field name="view_id" ref="view_website_highlight_tree" />
+	</record>
+</odoo>

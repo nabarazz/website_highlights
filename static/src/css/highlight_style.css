@@ -1,0 +1,10 @@
+/* static/src/css/highlight_style.css */
+
+.highlight-banner {
+    background-color: #ffc107;
+    color: #000;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+}
