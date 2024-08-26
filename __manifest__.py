@@ -13,7 +13,7 @@
     ],
     "assets": {
         "web.assets_frontend": [
-            "website_highlights/static/src/css/highlight_style.css",
+            "static/src/css/highlight_style.css",
         ],
     },
     "installable": True,
